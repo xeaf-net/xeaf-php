@@ -1,0 +1,45 @@
+{
+    "name"             : "xeaf-net/xeaf-php",
+    "description"      : "Реализация концепции XEAF для PHP",
+    "type"             : "library",
+    "minimum-stability": "stable",
+    "version"          : "7.1.0-dev",
+    "license"          : "Apache-2.0",
+    "authors"          : [
+        {
+            "name" : "Николай В. Анохин",
+            "email": "n.anokhin@xeaf.net"
+        }
+    ],
+    "autoload"         : {
+        "psr-4": {
+            "XEAF\\"                        : "src/",
+            "XEAF\\API\\"                   : "src/api/",
+            "XEAF\\API\\App\\"              : "src/api/app/",
+            "XEAF\\API\\Core\\"             : "src/api/core/",
+            "XEAF\\API\\Models\\"           : "src/api/models/",
+            "XEAF\\API\\Models\\Config\\"   : "src/api/models/config",
+            "XEAF\\API\\Models\\Results\\"  : "src/api/models/results",
+            "XEAF\\API\\Modules\\"          : "src/api/modules/",
+            "XEAF\\API\\Traits\\"           : "src/api/traits/",
+            "XEAF\\API\\Utils\\"            : "src/api/utils/",
+            "XEAF\\API\\Utils\\Exceptions\\": "src/api/utils/exceptions/",
+            "XEAF\\API\\Utils\\Sessions\\"  : "src/api/utils/sessions/",
+            "XEAF\\API\\Utils\\Storage\\"   : "src/api/utils/storage/",
+            "XEAF\\API\\WWW\\"              : "src/api/www/",
+            "XEAF\\Demo\\"                  : "src/demo/",
+            "XEAF\\Demo\\App\\"             : "src/demo/app/",
+            "XEAF\\Demo\\Modules\\"         : "src/demo/modules/",
+            "XEAF\\Demo\\WWW\\"             : "src/demo/www/"
+        },
+        "files": [
+            "src/autoload.php"
+        ]
+    },
+    "require"          : {
+        "php": ">=7.3"
+    },
+    "require-dev"      : {
+        "codeception/codeception": "3.0.3"
+    }
+}

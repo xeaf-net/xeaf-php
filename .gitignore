@@ -1,0 +1,15 @@
+~*
+.idea/**/dataSources.xml
+.idea/**/deployment.xml
+.idea/**/webServers.xml
+.idea/**/workspace.xml
+.idea/**/dataSources
+.idea/**/httpRequests
+/components
+/node_modules
+/tests/_output
+/vendor
+.DS_Store
+Thumbs.db
+composer.phar
+!.gitignore
