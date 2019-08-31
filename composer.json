@@ -36,6 +36,14 @@
             "src/autoload.php"
         ]
     },
+    "autoload-dev"     : {
+        "psr-4": {
+            "Tests\\"                 : "tests/",
+            "Tests\\XEAF\\"           : "tests/unit/",
+            "Tests\\XEAF\\API\\"      : "tests/unit/api/",
+            "Tests\\XEAF\\API\\Core\\": "tests/unit/api/core"
+        }
+    },
     "require"          : {
         "php": ">=7.3"
     },
