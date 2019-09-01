@@ -17,6 +17,7 @@
             "XEAF\\API\\"                   : "src/api/",
             "XEAF\\API\\App\\"              : "src/api/app/",
             "XEAF\\API\\Core\\"             : "src/api/core/",
+            "XEAF\\API\\Core\\Interfaces\\" : "src/api/core/interfaces",
             "XEAF\\API\\Models\\"           : "src/api/models/",
             "XEAF\\API\\Models\\Config\\"   : "src/api/models/config",
             "XEAF\\API\\Models\\Results\\"  : "src/api/models/results",
