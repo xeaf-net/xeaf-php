@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/api/models" isTestSource="false" packagePrefix="XEAF\API\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/interfaces" isTestSource="false" packagePrefix="XEAF\API\Utils\Interfaces\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/app" isTestSource="false" packagePrefix="XEAF\API\App\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/www" isTestSource="false" packagePrefix="XEAF\API\WWW\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/models/config" isTestSource="false" packagePrefix="XEAF\API\Models\Config\" />

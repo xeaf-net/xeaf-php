@@ -25,6 +25,7 @@
             "XEAF\\API\\Traits\\"           : "src/api/traits/",
             "XEAF\\API\\Utils\\"            : "src/api/utils/",
             "XEAF\\API\\Utils\\Exceptions\\": "src/api/utils/exceptions/",
+            "XEAF\\API\\Utils\\Interfaces\\": "src/api/utils/interfaces/",
             "XEAF\\API\\Utils\\Sessions\\"  : "src/api/utils/sessions/",
             "XEAF\\API\\Utils\\Storage\\"   : "src/api/utils/storage/",
             "XEAF\\API\\WWW\\"              : "src/api/www/",
