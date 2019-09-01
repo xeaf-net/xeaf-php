@@ -8,6 +8,6 @@ actor  : AcceptanceTester
 modules:
     enabled        :
         -   PhpBrowser:
-                url: http://xeaf-php/myapp
+                url: http://rcv.mac
         - \Helper\Acceptance
     step_decorators: ~
