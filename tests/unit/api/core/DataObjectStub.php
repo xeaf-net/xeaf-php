@@ -15,7 +15,7 @@ namespace Tests\XEAF\API\Core;
 use XEAF\API\Core\DataObject;
 
 /**
- * Постановойчный класс для тестирования XEAF\API\Core\DataObject
+ * Подстановочный класс для тестирования XEAF\API\Core\DataObject
  *
  * @package Tests\XEAF\API\Core
  */
