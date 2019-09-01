@@ -42,6 +42,7 @@
             "Tests\\"                              : "tests/",
             "Tests\\XEAF\\"                        : "tests/unit/",
             "Tests\\XEAF\\API\\"                   : "tests/unit/api/",
+            "Tests\\XEAF\\API\\App\\"              : "tests/unit/api/app",
             "Tests\\XEAF\\API\\Core\\"             : "tests/unit/api/core",
             "Tests\\XEAF\\API\\Utils\\"            : "tests/unit/api/utils",
             "Tests\\XEAF\\API\\Utils\\Exceptions\\": "tests/unit/api/utils/exceptions"

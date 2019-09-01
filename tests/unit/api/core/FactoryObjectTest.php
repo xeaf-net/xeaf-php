@@ -22,15 +22,6 @@ use Codeception\Test\Unit;
 class FactoryObjectTest extends Unit {
 
     /**
-     * @covers \XEAF\API\Core\FactoryObject::__construct
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-    }
-
-    /**
      * @covers \XEAF\API\Core\FactoryObject::getName
      *
      * @return void

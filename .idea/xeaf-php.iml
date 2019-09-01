@@ -27,6 +27,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/demo/app" isTestSource="false" packagePrefix="XEAF\Demo\App\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/core" isTestSource="false" packagePrefix="XEAF\API\Core\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/utils" isTestSource="false" packagePrefix="XEAF\API\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api/app" isTestSource="true" packagePrefix="Tests\XEAF\API\App\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/codeception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/phpunit-wrapper" />
