@@ -24,7 +24,7 @@ use XEAF\API\Utils\Exceptions\CoreException;
 abstract class StdObject {
 
     /**
-     * Префикс метда геттера
+     * Префикс метода получения значения свойства
      */
     private const GETTER_PREFIX = 'get';
 
@@ -77,11 +77,24 @@ abstract class StdObject {
         if ($this->methodExists($method)) {
             return $this->$method();
         }
-        throw CoreException::unknownProperty($this->getClassName(), $name);
+        throw CoreException::unknownReadableProperty($this->getClassName(), $name);
     }
 
     /**
-     * Возвращает имя метода геттера для заданного свойства
+     * Обрабатывает вызов неизвестного метода
+     *
+     * @param string $name      Имя метода
+     * @param array  $arguments Аргументы вызова
+     *
+     * @return void
+     * @throws \XEAF\API\Utils\Exceptions\CoreException
+     */
+    public function __call(string $name, array $arguments) {
+        throw CoreException::unknownMethod($this->getClassName(), $name);
+    }
+
+    /**
+     * Возвращает имя метода получения значения свойства
      *
      * @param string $name Имя свойства
      *

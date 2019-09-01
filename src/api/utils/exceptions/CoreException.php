@@ -28,14 +28,19 @@ class CoreException extends Exception {
     public const UNKNOWN_METHOD = 'COR-001';
 
     /**
-     * Обращение к неопределенному свойству
+     * Попытка чтения значения неопределенного свойства
      */
-    public const UNKNOWN_PROPERTY = 'COR-002';
+    public const UNKNOWN_READABLE_PROPERTY = 'COR-002';
+
+    /**
+     * Попытка задания значения неопределенного свойства
+     */
+    public const UNKNOWN_WRITABLE_PROPERTY = 'COR-003';
 
     /**
      * Внутренняя ошибка отражения
      */
-    public const REFLECTION_ERROR = 'COR-003';
+    public const REFLECTION_ERROR = 'COR-004';
 
     /**
      * Обращение к неопределенному методу
@@ -50,15 +55,27 @@ class CoreException extends Exception {
     }
 
     /**
-     * Обращение к неопределенному свойству
+     * Попытка чтения значения неопределенного свойства
      *
      * @param string $className Имя класса
      * @param string $property  Имя свойства
      *
      * @return \XEAF\API\Utils\Exceptions\CoreException
      */
-    public static function unknownProperty(string $className, string $property): self {
-        return new self(self::UNKNOWN_PROPERTY, 'Unknown property [%s::%s].', [$className, $property]);
+    public static function unknownReadableProperty(string $className, string $property): self {
+        return new self(self::UNKNOWN_READABLE_PROPERTY, 'Property [%s::%s] is undefined or write only.', [$className, $property]);
+    }
+
+    /**
+     * Попытка заданич значения неопределенного свойства
+     *
+     * @param string $className Имя класса
+     * @param string $property  Имя свойства
+     *
+     * @return \XEAF\API\Utils\Exceptions\CoreException
+     */
+    public static function unknownWritableProperty(string $className, string $property): self {
+        return new self(self::UNKNOWN_WRITABLE_PROPERTY, 'Property [%s::%s] is undefined or read only.', [$className, $property]);
     }
 
     /**

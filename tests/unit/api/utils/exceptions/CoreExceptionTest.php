@@ -36,14 +36,26 @@ class CoreExceptionTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Exceptions\CoreException::unknownProperty
+     * @covers \XEAF\API\Utils\Exceptions\CoreException::unknownReadableProperty
      *
      * @return void
      */
-    public function testUnknownProperty() {
-        $e = CoreException::unknownProperty('Demo', 'foo');
+    public function testUnknownReadableProperty() {
+        $e = CoreException::unknownReadableProperty('Demo', 'foo');
         $this->assertSame('COR-002', $e->getCode());
-        $this->assertSame('Unknown property [Demo::foo].', $e->getMessage());
+        $this->assertSame('Property [Demo::foo] is undefined or write only.', $e->getMessage());
+        $this->assertNull($e->getPrevious());
+    }
+
+    /**
+     * @covers \XEAF\API\Utils\Exceptions\CoreException::unknownWritableProperty
+     *
+     * @return void
+     */
+    public function testUnknownWritableProperty() {
+        $e = CoreException::unknownWritableProperty('Demo', 'foo');
+        $this->assertSame('COR-003', $e->getCode());
+        $this->assertSame('Property [Demo::foo] is undefined or read only.', $e->getMessage());
         $this->assertNull($e->getPrevious());
     }
 
@@ -55,7 +67,7 @@ class CoreExceptionTest extends Unit {
     public function testReflectionError() {
         $r = new ReflectionException('Ref');
         $e = CoreException::reflectionError($r);
-        $this->assertSame('COR-003', $e->getCode());
+        $this->assertSame('COR-004', $e->getCode());
         $this->assertSame('Internal reflection error.', $e->getMessage());
         $this->assertSame($r, $e->getPrevious());
     }

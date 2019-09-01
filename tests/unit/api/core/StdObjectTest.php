@@ -74,10 +74,23 @@ class StdObjectTest extends Unit {
      */
     public function test__getException(): void {
         $this->expectException(CoreException::class);
-        $this->expectExceptionCode('COR-002');
+        $this->expectExceptionCode(CoreException::UNKNOWN_READABLE_PROPERTY);
         $obj = new StdObjectStub();
         /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('Foo data', $obj->foo);
+    }
+
+    /**
+     * @covers \XEAF\API\Core\StdObject::__call
+     *
+     * @return void
+     */
+    public function test__call(): void {
+        $this->expectException(CoreException::class);
+        $this->expectExceptionCode(CoreException::UNKNOWN_METHOD);
+        $obj = new StdObjectStub();
+        /** @noinspection PhpUndefinedMethodInspection */
+        $obj->foo();
     }
 
     /**
