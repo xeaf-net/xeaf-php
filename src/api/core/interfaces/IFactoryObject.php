@@ -22,7 +22,7 @@ interface IFactoryObject {
     /**
      * Идентификатор объекта по умолчанию
      */
-    public const DEFAULT_NAME = 'default';
+    const DEFAULT_NAME = 'default';
 
     /**
      * Конструктор класса

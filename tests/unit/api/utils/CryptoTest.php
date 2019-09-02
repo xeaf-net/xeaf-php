@@ -12,8 +12,6 @@
  */
 namespace Tests\XEAF\API\Utils;
 
-namespace Tests\XEAF\API\Utils;
-
 use Codeception\Test\Unit;
 use XEAF\API\App\Factory;
 use XEAF\API\Utils\Crypto;
