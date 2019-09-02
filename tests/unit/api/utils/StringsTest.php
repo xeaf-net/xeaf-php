@@ -176,11 +176,12 @@ class StringsTest extends Unit {
      * @return void
      */
     public function isUUID(): void {
-        $this->assertSame(false, $this->str->isDateTime(''));
-        $this->assertSame(false, $this->str->isDateTime('0'));
-        $this->assertSame(false, $this->str->isDateTime('foo'));
-        $this->assertSame(true, $this->str->isDateTime('2019-01-01'));
-        $this->assertSame(true, $this->str->isDateTime('2019-01-01 13:54:17'));
+        $this->assertSame(false, $this->str->isUUID(''));
+        $this->assertSame(false, $this->str->isUUID('0'));
+        $this->assertSame(false, $this->str->isUUID('foo'));
+        $this->assertSame(false, $this->str->isUUID('00000000-0000-0000-0000-000000000000'));
+        $this->assertSame(true, $this->str->isUUID('e5edb4cd-711c-473c-93bc-8e65bdbc2061'));
+        $this->assertSame(true, $this->str->isUUID(Crypto::getInstance()->generateUUIDv4()));
     }
 
     /**
@@ -189,12 +190,11 @@ class StringsTest extends Unit {
      * @return void
      */
     public function testIsEmail(): void {
-        $this->assertSame(false, $this->str->isUUID(''));
-        $this->assertSame(false, $this->str->isUUID('0'));
-        $this->assertSame(false, $this->str->isUUID('foo'));
-        $this->assertSame(false, $this->str->isUUID('00000000-0000-0000-0000-000000000000'));
-        $this->assertSame(true, $this->str->isUUID('e5edb4cd-711c-473c-93bc-8e65bdbc2061'));
-        $this->assertSame(true, $this->str->isUUID(Crypto::getInstance()->generateUUIDv4()));
+        $this->assertSame(false, $this->str->isEmail(''));
+        $this->assertSame(false, $this->str->isEmail('0'));
+        $this->assertSame(false, $this->str->isEmail('foo'));
+        $this->assertSame(false, $this->str->isEmail('foo@example'));
+        $this->assertSame(true, $this->str->isEmail('demo@example.com'));
     }
 
     /**
