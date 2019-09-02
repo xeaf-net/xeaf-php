@@ -39,6 +39,7 @@ class FactoryTest extends Unit {
      * @return void
      */
     public function _after(): void {
+        Factory::clear();
         parent::_after();
     }
 

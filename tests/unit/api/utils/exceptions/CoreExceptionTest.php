@@ -10,7 +10,7 @@
  *
  * @license   Apache 2.0
  */
-namespace XEAF;
+namespace Tests\XEAF\API\Utils\Exceptions;
 
 use Codeception\Test\Unit;
 use ReflectionException;
@@ -19,7 +19,7 @@ use XEAF\API\Utils\Exceptions\CoreException;
 /**
  * @covers  \XEAF\API\Utils\Exceptions\CoreException
  *
- * @package XEAF
+ * @package Tests\XEAF\API\Utils\Exceptions
  */
 class CoreExceptionTest extends Unit {
 

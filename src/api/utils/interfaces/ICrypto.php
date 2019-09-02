@@ -26,14 +26,14 @@ interface ICrypto extends IFactoryObject {
      *
      * @return string
      */
-    function getHashAlgo(): string;
+    function hashAlgo(): string;
 
     /**
-     * Возвращает идентификатор алгоритма построения хеша паролей
+     * Возвращает код алгоритма построения хеша паролей
      *
-     * @return string
+     * @return int
      */
-    function getPasswordAlgo(): string;
+    function passwordAlgo(): int;
 
     /**
      * Генерирует хеш на основе пароля и строковых данных
@@ -43,7 +43,7 @@ interface ICrypto extends IFactoryObject {
      *
      * @return string
      */
-    function hash(string $data, $password = '');
+    function hash(string $data, $password = ''): string ;
 
     /**
      * Безопасный метод сравнение хешей

@@ -33,16 +33,16 @@ class Crypto extends FactoryObject implements ICrypto {
      *
      * @return string
      */
-    public function getHashAlgo(): string {
+    public function hashAlgo(): string {
         return self::HASH_ALGO;
     }
 
     /**
-     * Возвращает идентификатор алгоритма построения хеша паролей
+     * Возвращает код алгоритма построения хеша паролей
      *
-     * @return string
+     * @return int
      */
-    public function getPasswordAlgo(): string {
+    public function passwordAlgo(): int {
         return self::PASSWORD_ALGO;
     }
 
@@ -54,8 +54,8 @@ class Crypto extends FactoryObject implements ICrypto {
      *
      * @return string
      */
-    public function hash(string $data, $password = '') {
-        return hash_hmac($this->getHashAlgo(), $data, $password);
+    public function hash(string $data, $password = ''): string {
+        return hash_hmac($this->hashAlgo(), $data, $password);
     }
 
     /**
@@ -105,7 +105,7 @@ class Crypto extends FactoryObject implements ICrypto {
      * @return string
      */
     public function passwordHash(string $password): string {
-        return password_hash($password, $this->getPasswordAlgo());
+        return password_hash($password, $this->passwordAlgo());
     }
 
     /**
