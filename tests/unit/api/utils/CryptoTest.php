@@ -136,4 +136,54 @@ class CryptoTest extends Unit {
         $this->assertSame(1, preg_match($pattern, $data3));
     }
 
+    /**
+     * @covers \XEAF\API\Utils\Crypto::passwordHash
+     *
+     * @return void
+     */
+    public function testPasswordHash(): void {
+        $crypto = Crypto::getInstance();
+        $hash1  = $crypto->passwordHash('manager');
+        $hash2  = $crypto->passwordHash('manager');
+        $this->assertSame(true, password_verify('manager', $hash1));
+        $this->assertSame(true, password_verify('manager', $hash2));
+    }
+
+    /**
+     * @covers \XEAF\API\Utils\Crypto::verifyPassword
+     *
+     * @return void
+     */
+    public function testVerifyPassword(): void {
+        $crypto = Crypto::getInstance();
+        /** @noinspection SpellCheckingInspection */
+        $hash1 = '$2y$10$oinG0tx1s6CkXbtJiWUcDuUm392k0dSPdEokruPM1rV/zRe6k0..K';
+        /** @noinspection SpellCheckingInspection */
+        $hash2 = '$2y$10$4dh5rUCEjD80maejkISgDO7Ee4OKCEtKybEr6I7Uz0XtEBnuPBNEq';
+        $this->assertSame(true, $crypto->verifyPassword('manager', $hash1));
+        $this->assertSame(true, $crypto->verifyPassword('manager', $hash2));
+    }
+
+    /**
+     * @covers \XEAF\API\Utils\Crypto::securityToken
+     *
+     * @return void
+     */
+    public function testSecurityToken(): void {
+        $crypto = Crypto::getInstance();
+        $token1 = $crypto->securityToken();
+        $token2 = $crypto->securityToken();
+        $this->assertNotSame($token1, $token2);
+    }
+
+    /**
+     * @covers \XEAF\API\Utils\Crypto::getInstance
+     *
+     * @return void
+     */
+    public function testGetInstance(): void {
+        $crypto1 = Crypto::getInstance();
+        $crypto2 = Crypto::getInstance();
+        $this->assertSame($crypto1, $crypto2);
+    }
 }
