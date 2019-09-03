@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Crypto.php
+ * CryptoUtils.php
  *
  * Файл является неотъемлемой частью проекта XEAF-PHP
  *
@@ -14,9 +14,9 @@ namespace XEAF\API\Utils;
 
 use XEAF\API\App\Factory;
 use XEAF\API\Core\FactoryObject;
-use XEAF\API\Utils\Interfaces\ICrypto;
+use XEAF\API\Utils\Interfaces\ICryptoUtils;
 
-class Crypto extends FactoryObject implements ICrypto {
+class CryptoUtils extends FactoryObject implements ICryptoUtils {
 
     /**
      * Идентификатор алгоритма построения хеша данных
@@ -126,18 +126,18 @@ class Crypto extends FactoryObject implements ICrypto {
      * @return string
      */
     public function securityToken(): string {
-        $uuid = Crypto::generateUUIDv4();
+        $uuid = CryptoUtils::generateUUIDv4();
         return base64_encode($uuid);
     }
 
     /**
      * Возвращает единичный экемпляр объекта
      *
-     * @return \XEAF\API\Utils\Interfaces\ICrypto
+     * @return \XEAF\API\Utils\Interfaces\ICryptoUtils
      */
-    public static function getInstance(): ICrypto {
-        $result = Factory::getFactoryObject(Crypto::class, self::DEFAULT_NAME);
-        assert($result instanceof ICrypto);
+    public static function getInstance(): ICryptoUtils {
+        $result = Factory::getFactoryObject(CryptoUtils::class, self::DEFAULT_NAME);
+        assert($result instanceof ICryptoUtils);
         return $result;
     }
 }

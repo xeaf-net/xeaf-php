@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ICrypto.php
+ * ICryptoUtils.php
  *
  * Файл является неотъемлемой частью проекта XEAF-PHP
  *
@@ -19,7 +19,7 @@ use XEAF\API\Core\Interfaces\IFactoryObject;
  *
  * @package XEAF\API\Utils\Interfaces
  */
-interface ICrypto extends IFactoryObject {
+interface ICryptoUtils extends IFactoryObject {
 
     /**
      * Возвращает идентификатор алгоритма построения хеша данных

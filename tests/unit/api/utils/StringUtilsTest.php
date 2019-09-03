@@ -14,7 +14,7 @@ namespace Tests\XEAF\API\Utils;
 
 use Codeception\Test\Unit;
 use XEAF\API\App\Factory;
-use XEAF\API\Utils\Crypto;
+use XEAF\API\Utils\CryptoUtils;
 use XEAF\API\Utils\StringUtils;
 
 /**
@@ -181,7 +181,7 @@ class StringUtilsTest extends Unit {
         $this->assertSame(false, $this->str->isUUID('foo'));
         $this->assertSame(false, $this->str->isUUID('00000000-0000-0000-0000-000000000000'));
         $this->assertSame(true, $this->str->isUUID('e5edb4cd-711c-473c-93bc-8e65bdbc2061'));
-        $this->assertSame(true, $this->str->isUUID(Crypto::getInstance()->generateUUIDv4()));
+        $this->assertSame(true, $this->str->isUUID(CryptoUtils::getInstance()->generateUUIDv4()));
     }
 
     /**
@@ -210,7 +210,7 @@ class StringUtilsTest extends Unit {
         $this->assertSame(false, $this->str->isObjectId('foo'));
         $this->assertSame(false, $this->str->isObjectId('00000000-0000-0000-0000-000000000000'));
         $this->assertSame(true, $this->str->isObjectId('e5edb4cd-711c-473c-93bc-8e65bdbc2061'));
-        $this->assertSame(true, $this->str->isObjectId(Crypto::getInstance()->generateUUIDv4()));
+        $this->assertSame(true, $this->str->isObjectId(CryptoUtils::getInstance()->generateUUIDv4()));
     }
 
     /**
