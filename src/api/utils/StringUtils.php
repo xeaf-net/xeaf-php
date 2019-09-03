@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Strings.php
+ * StringUtils.php
  *
  * Файл является неотъемлемой частью проекта XEAF-PHP
  *
@@ -14,14 +14,14 @@ namespace XEAF\API\Utils;
 
 use XEAF\API\App\Factory;
 use XEAF\API\Core\FactoryObject;
-use XEAF\API\Utils\Interfaces\IStrings;
+use XEAF\API\Utils\Interfaces\IStringUtils;
 
 /**
  * Реализует методы работы со строками
  *
  * @package  XEAF\API\Utils
  */
-class Strings extends FactoryObject implements IStrings {
+class StringUtils extends FactoryObject implements IStringUtils {
 
     /**
      * Пустая строка
@@ -225,11 +225,11 @@ class Strings extends FactoryObject implements IStrings {
     /**
      * Возвращает единичный экемпляр объекта
      *
-     * @return \XEAF\API\Utils\Interfaces\IStrings
+     * @return \XEAF\API\Utils\Interfaces\IStringUtils
      */
-    public static function getInstance(): IStrings {
+    public static function getInstance(): IStringUtils {
         $result = Factory::getFactoryObject(self::class, FactoryObject::DEFAULT_NAME);
-        assert($result instanceof IStrings);
+        assert($result instanceof IStringUtils);
         return $result;
     }
 }

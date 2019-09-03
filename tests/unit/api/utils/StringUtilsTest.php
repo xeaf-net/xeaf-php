@@ -1,7 +1,7 @@
 <?php
 
 /**
- * StringsTest.php
+ * StringUtilsTest.php
  *
  * Файл является неотъемлемой частью проекта XEAF-PHP
  *
@@ -15,18 +15,18 @@ namespace Tests\XEAF\API\Utils;
 use Codeception\Test\Unit;
 use XEAF\API\App\Factory;
 use XEAF\API\Utils\Crypto;
-use XEAF\API\Utils\Strings;
+use XEAF\API\Utils\StringUtils;
 
 /**
- * @covers   \XEAF\API\Utils\Strings
+ * @covers   \XEAF\API\Utils\StringUtils
  *
  * @package  Tests\XEAF\API\Utils
  */
-class StringsTest extends Unit {
+class StringUtilsTest extends Unit {
 
     /**
      * Тестируемый объект
-     * @var \XEAF\API\Utils\Strings
+     * @var \XEAF\API\Utils\StringUtils
      */
     private $str = null;
 
@@ -38,7 +38,7 @@ class StringsTest extends Unit {
     public function _before(): void {
         parent::_before();
         Factory::clear();
-        $this->str = Strings::getInstance();
+        $this->str = StringUtils::getInstance();
     }
 
     /**
@@ -52,7 +52,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::emptyString
+     * @covers \XEAF\API\Utils\StringUtils::emptyString
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isEmpty
+     * @covers \XEAF\API\Utils\StringUtils::isEmpty
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::emptyToNull
+     * @covers \XEAF\API\Utils\StringUtils::emptyToNull
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::stringToInteger
+     * @covers \XEAF\API\Utils\StringUtils::stringToInteger
      *
      * @return void
      */
@@ -98,7 +98,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::stringToFloat
+     * @covers \XEAF\API\Utils\StringUtils::stringToFloat
      *
      * @return void
      */
@@ -113,7 +113,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::stringToDateTime
+     * @covers \XEAF\API\Utils\StringUtils::stringToDateTime
      *
      * @return void
      */
@@ -129,7 +129,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isInteger
+     * @covers \XEAF\API\Utils\StringUtils::isInteger
      *
      * @return void
      */
@@ -143,7 +143,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isFloat
+     * @covers \XEAF\API\Utils\StringUtils::isFloat
      *
      * @return void
      */
@@ -158,7 +158,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isDateTime
+     * @covers \XEAF\API\Utils\StringUtils::isDateTime
      *
      * @return void
      */
@@ -171,7 +171,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isUUID
+     * @covers \XEAF\API\Utils\StringUtils::isUUID
      *
      * @return void
      */
@@ -185,7 +185,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isEmail
+     * @covers \XEAF\API\Utils\StringUtils::isEmail
      *
      * @return void
      */
@@ -198,7 +198,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::isObjectId
+     * @covers \XEAF\API\Utils\StringUtils::isObjectId
      *
      * @return void
      */
@@ -214,7 +214,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::startsWith
+     * @covers \XEAF\API\Utils\StringUtils::startsWith
      *
      * @return void
      */
@@ -228,7 +228,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::endsWith
+     * @covers \XEAF\API\Utils\StringUtils::endsWith
      *
      * @return void
      */
@@ -242,7 +242,7 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::upperCaseFirst
+     * @covers \XEAF\API\Utils\StringUtils::upperCaseFirst
      *
      * @return void
      */
@@ -257,12 +257,12 @@ class StringsTest extends Unit {
     }
 
     /**
-     * @covers \XEAF\API\Utils\Strings::getInstance
+     * @covers \XEAF\API\Utils\StringUtils::getInstance
      *
      * @return void
      */
     public function testGetInstance(): void {
-        $str = Strings::getInstance();
+        $str = StringUtils::getInstance();
         $this->assertSame($this->str, $str);
     }
 }

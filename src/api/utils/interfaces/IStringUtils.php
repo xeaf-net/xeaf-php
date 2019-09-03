@@ -1,7 +1,7 @@
 <?php
 
 /**
- * IStrings.php
+ * IStringUtils.php
  *
  * Файл является неотъемлемой частью проекта XEAF-PHP
  *
@@ -19,7 +19,7 @@ use XEAF\API\Core\Interfaces\IFactoryObject;
  *
  * @package XEAF\API\Utils\Interfaces
  */
-interface IStrings extends IFactoryObject {
+interface IStringUtils extends IFactoryObject {
 
     /**
      * Возвращает пустую строку
