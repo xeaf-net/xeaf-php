@@ -2,38 +2,70 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/api/models" isTestSource="false" packagePrefix="XEAF\API\Models\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/interfaces" isTestSource="false" packagePrefix="XEAF\API\Utils\Interfaces\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/app" isTestSource="false" packagePrefix="XEAF\API\App\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/www" isTestSource="false" packagePrefix="XEAF\API\WWW\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/models/config" isTestSource="false" packagePrefix="XEAF\API\Models\Config\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit" isTestSource="true" packagePrefix="Tests\XEAF\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/exceptions" isTestSource="false" packagePrefix="XEAF\API\Utils\Exceptions\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/storage" isTestSource="false" packagePrefix="XEAF\API\Utils\Storage\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api" isTestSource="false" packagePrefix="XEAF\API\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api/utils" isTestSource="true" packagePrefix="Tests\XEAF\API\Utils\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/sessions" isTestSource="false" packagePrefix="XEAF\API\Utils\Sessions\" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="XEAF\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/demo/modules" isTestSource="false" packagePrefix="XEAF\Demo\Modules\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api" isTestSource="true" packagePrefix="Tests\XEAF\API\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api/utils/exceptions" isTestSource="true" packagePrefix="Tests\XEAF\API\Utils\Exceptions\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/modules" isTestSource="false" packagePrefix="XEAF\API\Modules\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/core/interfaces" isTestSource="false" packagePrefix="XEAF\API\Core\Interfaces\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/traits" isTestSource="false" packagePrefix="XEAF\API\Traits\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/api/models/results" isTestSource="false" packagePrefix="XEAF\API\Models\Results\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api/core" isTestSource="true" packagePrefix="Tests\XEAF\API\Core\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/demo" isTestSource="false" packagePrefix="XEAF\Demo\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/demo/www" isTestSource="false" packagePrefix="XEAF\Demo\WWW\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/demo/app" isTestSource="false" packagePrefix="XEAF\Demo\App\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/models" isTestSource="false" packagePrefix="XEAF\Redis\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.pgsql" isTestSource="false" packagePrefix="XEAF\DB\PgSQL\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/utils" isTestSource="false" packagePrefix="XEAF\Redis\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api" isTestSource="false" packagePrefix="XEAF\API\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/exceptions" isTestSource="false" packagePrefix="XEAF\API\Utils\Exceptions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/smarty/utils" isTestSource="false" packagePrefix="XEAF\Smarty\Utils\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/core" isTestSource="false" packagePrefix="XEAF\API\Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm/models/results" isTestSource="false" packagePrefix="XEAF\ORM\Models\Results\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/modules" isTestSource="false" packagePrefix="XEAF\API\Modules\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/utils/providers" isTestSource="false" packagePrefix="XEAF\Redis\Utils\Providers\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/models" isTestSource="false" packagePrefix="XEAF\API\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/core" isTestSource="false" packagePrefix="XEAF\UI\Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.pgsql/utils/providers" isTestSource="false" packagePrefix="XEAF\DB\PgSQL\Utils\Providers\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.mysql/utils/providers" isTestSource="false" packagePrefix="XEAF\DB\MySQL\Utils\Providers\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/utils" isTestSource="false" packagePrefix="XEAF\DB\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui" isTestSource="false" packagePrefix="XEAF\UI\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/models/config" isTestSource="false" packagePrefix="XEAF\API\Models\Config\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/utils" isTestSource="false" packagePrefix="XEAF\API\Utils\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests/unit/api/app" isTestSource="true" packagePrefix="Tests\XEAF\API\App\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis" isTestSource="false" packagePrefix="XEAF\Redis\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/models/config" isTestSource="false" packagePrefix="XEAF\Redis\Models\Config\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/www" isTestSource="false" packagePrefix="XEAF\UI\WWW\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/app" isTestSource="false" packagePrefix="XEAF\UI\App\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/utils/sessions" isTestSource="false" packagePrefix="XEAF\DB\Utils\Sessions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/core" isTestSource="false" packagePrefix="XEAF\DB\Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/smarty/utils/exceptions" isTestSource="false" packagePrefix="XEAF\Smarty\Utils\Exceptions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/smarty/models" isTestSource="false" packagePrefix="XEAF\Smarty\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/models" isTestSource="false" packagePrefix="XEAF\DB\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/utils/exceptions" isTestSource="false" packagePrefix="XEAF\DB\Utils\Exceptions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/plugins" isTestSource="false" packagePrefix="XEAF\UI\Plugins\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/www" isTestSource="false" packagePrefix="XEAF\API\WWW\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/models/results" isTestSource="false" packagePrefix="XEAF\UI\Models\Results\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/models" isTestSource="false" packagePrefix="XEAF\UI\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/smarty" isTestSource="false" packagePrefix="XEAF\Smarty\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/storage" isTestSource="false" packagePrefix="XEAF\API\Utils\Storage\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/utils/exceptions" isTestSource="false" packagePrefix="XEAF\Redis\Utils\Exceptions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/app" isTestSource="false" packagePrefix="XEAF\API\App\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/models/results" isTestSource="false" packagePrefix="XEAF\API\Models\Results\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/utils/storage" isTestSource="false" packagePrefix="XEAF\DB\Utils\Storage\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/api/utils/sessions" isTestSource="false" packagePrefix="XEAF\API\Utils\Sessions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/smarty/models/config" isTestSource="false" packagePrefix="XEAF\Smarty\Models\Config\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/utils" isTestSource="false" packagePrefix="XEAF\UI\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db" isTestSource="false" packagePrefix="XEAF\DB\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm" isTestSource="false" packagePrefix="XEAF\ORM\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/modules" isTestSource="false" packagePrefix="XEAF\UI\Modules\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm/models" isTestSource="false" packagePrefix="XEAF\ORM\Models\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db/models/config" isTestSource="false" packagePrefix="XEAF\DB\Models\Config\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm/utils" isTestSource="false" packagePrefix="XEAF\ORM\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.pgsql/utils" isTestSource="false" packagePrefix="XEAF\DB\PgSQL\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ui/templates" isTestSource="false" packagePrefix="XEAF\UI\Templates\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.mysql" isTestSource="false" packagePrefix="XEAF\DB\MySQL\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm/utils/exceptions" isTestSource="false" packagePrefix="XEAF\ORM\Utils\Exceptions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/utils/sessions" isTestSource="false" packagePrefix="XEAF\Redis\Utils\Sessions\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/redis/utils/storage" isTestSource="false" packagePrefix="XEAF\Redis\Utils\Storage\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/orm/core" isTestSource="false" packagePrefix="XEAF\ORM\Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/db.mysql/utils" isTestSource="false" packagePrefix="XEAF\DB\MySQL\Utils\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/gherkin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/codeception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/phpunit-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/stub" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/font-awesome" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/datatables/datatables" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/facebook/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
@@ -76,6 +108,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/resource-operations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/smarty/smarty" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
@@ -90,6 +123,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />

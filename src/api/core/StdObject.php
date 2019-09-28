@@ -3,7 +3,7 @@
 /**
  * StdObject.php
  *
- * Файл является неотъемлемой частью проекта XEAF-PHP
+ * Файл является неотъемлемой частью проекта XEAF-PHP-API
  *
  * @author    Николай В. Анохин <n.anokhin@xeaf.net>
  * @copyright 2019 XEAF.NET Group
@@ -15,92 +15,111 @@ namespace XEAF\API\Core;
 use XEAF\API\Utils\Exceptions\CoreException;
 
 /**
- * Реализует базовые методы свойств объектов
+ * Базовый класс для всех классов объектов проекта
  *
- * @property-read string $className Идентификатор класса объекта
+ * @property-read string $className Полное имя класса
  *
- * @package XEAF\API\Core
+ * @package  XEAF\API\Core
  */
 abstract class StdObject {
 
     /**
-     * Префикс метода получения значения свойства
+     * Префикс метода получения значения свойства класса
      */
-    private const GETTER_PREFIX = 'get';
+    protected const GETTER_PREFIX = 'get';
 
     /**
-     * Возвращает идентификатор класса объекта
+     * Префикс метода задания значения свойства класса
+     */
+    protected const SETTER_PREFIX = 'set';
+
+    /**
+     * Возвращает полное имя класса объекта
      *
      * @return string
      */
-    public function getClassName(): string {
+    protected function getClassName(): string {
         return get_class($this);
     }
 
     /**
-     * Возвращает признак существования метода
+     * Возвращает значение свойства объекта класса
      *
-     * @param string $name Имя метода
-     *
-     * @return bool
-     */
-    public function methodExists(string $name): bool {
-        return method_exists($this, $name);
-    }
-
-    /**
-     * Возвращает признак возможности чтения значения свойтства
-     *
-     * @param string $name Имя свойтства
-     *
-     * @return bool
-     */
-    public function propertyReadable(string $name): bool {
-        $result = property_exists($this, $name);
-        if (!$result) {
-            $method = $this->getterName($name);
-            $result = $this->methodExists($method);
-        }
-        return $result;
-    }
-
-    /**
-     * Возвращает значение свойства класса
-     *
-     * @param string $name Имя свойства
+     * @param string $name Свойство
      *
      * @return mixed
      * @throws \XEAF\API\Utils\Exceptions\CoreException
      */
     public function __get(string $name) {
-        $method = $this->getterName($name);
-        if ($this->methodExists($method)) {
+        $method = $this->propertyMethod($name, StdObject::GETTER_PREFIX);
+        if (method_exists($this, $method)) {
             return $this->$method();
         }
-        throw CoreException::unknownReadableProperty($this->getClassName(), $name);
+        return $this->undefinedGetter($name);
     }
 
     /**
-     * Обрабатывает вызов неизвестного метода
+     * Возвращает значение неопределенного свойства
      *
-     * @param string $name      Имя метода
-     * @param array  $arguments Аргументы вызова
+     * @param string $name Свойство
+     *
+     * @return mixed
+     * @throws \XEAF\API\Utils\Exceptions\CoreException
+     */
+    protected function undefinedGetter(string $name) {
+        throw CoreException::undefinedProperty($this->className, $name);
+    }
+
+    /**
+     * Обрабатывает обращение к неизвестному методу
+     *
+     * @param string $name      Метод
+     * @param array  $arguments Аргументы вызова метода
      *
      * @return void
      * @throws \XEAF\API\Utils\Exceptions\CoreException
      */
     public function __call(string $name, array $arguments) {
-        throw CoreException::unknownMethod($this->getClassName(), $name);
+        throw CoreException::undefinedMethod($this->className, $name);
     }
 
     /**
-     * Возвращает имя метода получения значения свойства
+     * Возвращает имя метода обращеия к свойству класса
      *
-     * @param string $name Имя свойства
+     * @param string $name   Свойство
+     * @param string $prefix Префикс метода
      *
      * @return string
      */
-    protected function getterName(string $name): string {
-        return self::GETTER_PREFIX . ucfirst($name);
+    protected function propertyMethod(string $name, string $prefix): string {
+        return $prefix . ucfirst($name);
+    }
+
+    /**
+     * Задает значение свойства только при условнии непустого значения
+     *
+     * @param string     $name  Свойство
+     * @param mixed|null $value Значение свойства
+     *
+     * @return void
+     */
+    protected function assignIfNotNull(string $name, $value): void {
+        if ($value !== null) {
+            $this->$name = $value;
+        }
+    }
+
+    /**
+     * Задает значение переменной только при условнии непустого значения
+     *
+     * @param mixed      $var   Переменная
+     * @param mixed|null $value Значение свойства
+     *
+     * @return void
+     */
+    protected function assignVarIfNotNull(&$var, $value): void {
+        if ($value !== null) {
+            $var = $value;
+        }
     }
 }

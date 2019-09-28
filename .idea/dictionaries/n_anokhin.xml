@@ -2,6 +2,8 @@
   <dictionary name="n.anokhin">
     <words>
       <w>algo</w>
+      <w>mbstring</w>
+      <w>pgsql</w>
     </words>
   </dictionary>
 </component>

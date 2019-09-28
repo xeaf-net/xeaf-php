@@ -1,0 +1,35 @@
+
+;
+; Интернационализация
+;
+[i18n]
+
+;
+; Форматирование даты и времени
+;
+dateFormat     = "Y/m/d"
+timeFormat     = "h:i:s a"
+dateTimeFormat = "Y/m/d h:i a"
+
+;
+; Форматирование чисел
+;
+numericDecimalPoint       = "."
+numericThousandsSeparator = "'"
+
+;
+; Форматирование денежных величин
+;
+moneyDecimalPoint       = "."
+moneyDecimalDigits      = 2
+moneyThousandsSeparator = "'"
+
+;
+; Ошибки
+;
+[errors]
+debugMode           = "Debug Mode"
+accessDenied        = "Access to the resource is denied."
+internalServerError = "Internal server error."
+securityTokenError  = "Security Token Error."
+invalidUserSession  = "Invalid user session."

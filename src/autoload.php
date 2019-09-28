@@ -3,7 +3,7 @@
 /**
  * autoload.php
  *
- * Файл является неотъемлемой частью проекта XEAF-PHP
+ * Файл является неотъемлемой частью проекта XEAF-PHP-API
  *
  * @author    Николай В. Анохин <n.anokhin@xeaf.net>
  * @copyright 2019 XEAF.NET Group
@@ -13,6 +13,7 @@
 namespace XEAF;
 
 /**
- * Номер версии библиотеки
+ * Номер версии XEAF PHP API
  */
-define('__XEAF_VERSION__', '7.1.0-dev');
+define('__XEAF_PHP_VERSION__', '7.0.0');
+

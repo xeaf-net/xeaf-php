@@ -1,5 +1,21 @@
 {
     "portal": {
-        "url": "xeaf-php"
+        "url"     : "http://localhost",
+        "origin"  : "*",
+        "language": "en_US",
+        "timezone": "UTC",
+        "tmp"     : "/tmp",
+        "session" : "files://default"
+    },
+    "files" : {
+        "default": {
+            "path": "/tmp"
+        }
+    },
+    "logger": {
+        "level" : "debug",
+        "prefix": "xeaf",
+        "path"  : "/var/logs"
     }
 }
+

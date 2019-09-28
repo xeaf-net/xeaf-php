@@ -1,0 +1,39 @@
+;
+; Заголовки предупреждений
+;
+[alerts]
+info    = "Information"
+success = "Success"
+warning = "Warning!"
+danger  = "Error!"
+
+;
+; Флажки
+;
+[flags]
+info    = "Information"
+success = "Success"
+warning = "Warning"
+danger  = "Error"
+
+;
+; Кнопки
+;
+[buttons]
+ok      = "OK"
+save    = "Save"
+cancel  = "Cancel"
+reset   = "Reset"
+restore = "Restore"
+delete  = "Delete"
+close   = "Close"
+search  = "Search"
+filter  = "Filter"
+
+;
+; Стандартные сообщения
+;
+[messages]
+confirmDelete = "Do you want to delete data?"
+dataSaved     = "Data successfully saved."
+dataDeleted   = "Data successfully deleted."

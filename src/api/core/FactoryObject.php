@@ -3,7 +3,7 @@
 /**
  * FactoryObject.php
  *
- * Файл является неотъемлемой частью проекта XEAF-PHP
+ * Файл является неотъемлемой частью проекта XEAF-PHP-API
  *
  * @author    Николай В. Анохин <n.anokhin@xeaf.net>
  * @copyright 2019 XEAF.NET Group
@@ -12,19 +12,22 @@
  */
 namespace XEAF\API\Core;
 
-use XEAF\API\Core\Interfaces\IFactoryObject;
-
 /**
- * Реализует базовые методы объекта фабрики
+ * Реализует свойства хранения имени объекта
  *
- * @property string $name Идентификатор объекта
+ * @property string $name Имя объекта
  *
- * @package XEAF\API\Core
+ * @package  XEAF\API\Core
  */
-abstract class FactoryObject extends StdObject implements IFactoryObject {
+abstract class FactoryObject extends StdObject {
 
     /**
-     * Идентификатор объекта
+     * Имя объекта по умолчанию
+     */
+    public const DEFAULT_NAME = 'default';
+
+    /**
+     * Имя объекта
      * @var string
      */
     private $_name = self::DEFAULT_NAME;
@@ -32,18 +35,29 @@ abstract class FactoryObject extends StdObject implements IFactoryObject {
     /**
      * Конструктор класса
      *
-     * @param string $name Идентификатор объекта
+     * @param string $name Имя объекта
      */
-    public function __construct(string $name) {
+    public function __construct(string $name = self::DEFAULT_NAME) {
         $this->_name = $name;
     }
 
     /**
-     * Возвращает идентификатор объекта
+     * Возвращает имя объекта
      *
      * @return string
      */
     public function getName(): string {
         return $this->_name;
+    }
+
+    /**
+     * Задает имя объекта
+     *
+     * @param string $name Имя объекта
+     *
+     * @return void
+     */
+    public function setName(string $name): void {
+        $this->_name = $name;
     }
 }

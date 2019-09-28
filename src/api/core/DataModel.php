@@ -3,7 +3,7 @@
 /**
  * DataModel.php
  *
- * Файл является неотъемлемой частью проекта XEAF-PHP
+ * Файл является неотъемлемой частью проекта XEAF-PHP-API
  *
  * @author    Николай В. Анохин <n.anokhin@xeaf.net>
  * @copyright 2019 XEAF.NET Group
@@ -15,27 +15,22 @@ namespace XEAF\API\Core;
 use XEAF\API\Utils\Exceptions\CoreException;
 
 /**
- * Реализует методы моделей данных
+ * Реализует базовые свойства моделей данных
  *
- * @package XEAF\API\Core
+ * @package  XEAF\API\Core
  */
 abstract class DataModel extends DataObject {
 
     /**
-     * Задает значение свойства объекта
+     * Задает значение неопределенного свойства
      *
-     * @param string $name  Имя свойства
+     * @param string $name  Свойство
      * @param mixed  $value Значение
      *
      * @return void
      * @throws \XEAF\API\Utils\Exceptions\CoreException
      */
-    public function __set(string $name, $value): void {
-        $method = $this->setterName($name);
-        if ($this->methodExists($method)) {
-            $this->$method($value);
-        } else {
-            throw CoreException::unknownWritableProperty($this->getClassName(), $name);
-        }
+    protected function undefinedSetter(string $name, $value): void {
+        throw CoreException::undefinedProperty($this->className, $name);
     }
 }
