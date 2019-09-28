@@ -1,0 +1,8 @@
+[pgsql]
+
+;
+; Форматирование даты и времени
+;
+dateFormat     = "YYYY/MM/DD"
+timeFormat     = "HH12:MI:SS AM"
+dateTimeFormat = "YYYY/MM/DD HH12:MI AM"

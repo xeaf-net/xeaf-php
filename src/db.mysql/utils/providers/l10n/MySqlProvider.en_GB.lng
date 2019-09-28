@@ -1,0 +1,9 @@
+[mysql]
+
+;
+; Форматирование даты и времени
+;
+dateFormat     = "%Y/%m/%d"
+timeFormat     = "%h:%i:%s %p"
+dateTimeFormat = "%Y/%m/%d %h:%i %p"
+

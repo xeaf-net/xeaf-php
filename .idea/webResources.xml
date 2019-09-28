@@ -7,6 +7,9 @@
           <resourceRoots>
             <path value="file://$PROJECT_DIR$/src/api/etc" />
             <path value="file://$PROJECT_DIR$/src/demo/etc" />
+            <path value="file://$PROJECT_DIR$/tests/_support" />
+            <path value="file://$PROJECT_DIR$/tests/_data" />
+            <path value="file://$PROJECT_DIR$/tests/_output" />
           </resourceRoots>
         </entryData>
       </entry>

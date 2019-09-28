@@ -1,0 +1,35 @@
+
+;
+; Интернационализация
+;
+[i18n]
+
+;
+; Форматирование даты и времени
+;
+dateFormat     = "d.m.Y"
+timeFormat     = "H:i:s"
+dateTimeFormat = "d.m.Y H:i"
+
+;
+; Форматирование чисел
+;
+numericDecimalPoint       = ","
+numericThousandsSeparator = " "
+
+;
+; Форматирование денежных величин
+;
+moneyDecimalPoint       = ","
+moneyDecimalDigits      = 2
+moneyThousandsSeparator = " "
+
+;
+; Ошибки
+;
+[errors]
+debugMode           = "Режим отладки"
+accessDenied        = "Доступ к ресурсу заблокирован."
+internalServerError = "Внутренняя ошибка сервера."
+securityTokenError  = "Ошибка токена безопасности."
+invalidUserSession  = "Некорректная сессия пользователя."
