@@ -15,5 +15,5 @@ namespace XEAF;
 /**
  * Номер версии XEAF PHP API
  */
-define('__XEAF_PHP_VERSION__', '7.0.0');
+define('__XEAF_PHP_VERSION__', '7.0.1');
 
