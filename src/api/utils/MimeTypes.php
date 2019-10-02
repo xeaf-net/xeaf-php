@@ -68,9 +68,10 @@ class MimeTypes {
         'bmp'  => 'image/bmp',
         'gif'  => 'image/gif',
         'ico'  => 'image/x-icon',
-        'jpg'  => 'jpg - image/jpeg',
-        'jpeg' => 'jpg - image/jpeg',
+        'jpg'  => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
         'png'  => 'image/png',
+        'raw'  => 'image/raw',
         'svg'  => 'image/svg+xml',
     ];
 
