@@ -12,7 +12,6 @@
  */
 namespace XEAF\ORM\Utils;
 
-use XEAF\API\Utils\Logger;
 use XEAF\ORM\Core\EntityManager;
 use XEAF\ORM\Models\EntityFromModel;
 use XEAF\ORM\Models\EntityJoinModel;
@@ -309,17 +308,21 @@ class EntityParser {
         $token = self::SQ;
         $pos   = self::$charPos;
         $ch    = self::$chars[++self::$charPos];
-        Logger::debug('ch1: ' . $ch);
-        while ($ch != self::CR && $ch != self::LF && $ch != self::SQ && $ch != self::END_CHAR) {
-            $ch    = self::$chars[self::$charPos++];
-            Logger::debug('ch2: ' . $ch);
-            $token .= $ch;
-            Logger::debug('token: ' . $token);
+        // Logger::debug('ch1: ' . $ch);
+        if ($ch == self::SQ) {
+            $token = "''"; // Пустая строка
+        } else {
+            while ($ch != self::CR && $ch != self::LF && $ch != self::SQ && $ch != self::END_CHAR) {
+                $ch = self::$chars[self::$charPos++];
+                // Logger::debug('ch2: ' . $ch);
+                $token .= $ch;
+                // Logger::debug('token: ' . $token);
+            }
+            if ($ch != self::SQ) {
+                throw EntityException::unclosedSingleQuote($pos);
+            }
+            self::$charPos--;
         }
-        if ($ch != self::SQ) {
-            throw EntityException::unclosedSingleQuote($pos);
-        }
-        self::$charPos--;
         self::$tokens[] = new EntityTokenModel(EntityTokenModel::T_CONSTANT, $token, $pos);
     }
 
