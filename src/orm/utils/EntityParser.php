@@ -12,6 +12,7 @@
  */
 namespace XEAF\ORM\Utils;
 
+use XEAF\API\Utils\Logger;
 use XEAF\ORM\Core\EntityManager;
 use XEAF\ORM\Models\EntityFromModel;
 use XEAF\ORM\Models\EntityJoinModel;
@@ -308,9 +309,12 @@ class EntityParser {
         $token = self::SQ;
         $pos   = self::$charPos;
         $ch    = self::$chars[++self::$charPos];
+        Logger::debug('ch1: ' . $ch);
         while ($ch != self::CR && $ch != self::LF && $ch != self::SQ && $ch != self::END_CHAR) {
             $ch    = self::$chars[self::$charPos++];
+            Logger::debug('ch2: ' . $ch);
             $token .= $ch;
+            Logger::debug('token: ' . $token);
         }
         if ($ch != self::SQ) {
             throw EntityException::unclosedSingleQuote($pos);
@@ -1024,9 +1028,9 @@ class EntityParser {
                                     $op     = trim(mb_substr($result, -3));
                                     $result = mb_substr($result, 0, -3);
                                     if ($op == '<>') {
-                                        $result .= 'is not ';
+                                        $result .= ' is not ';
                                     } else {
-                                        $result .= 'is ';
+                                        $result .= ' is ';
                                     }
                                     break;
                                 case 'false':
@@ -1182,6 +1186,7 @@ class EntityParser {
         }
         $fields = rtrim($fields, ',');
         $values = rtrim($values, ',');
+        /** @noinspection SqlNoDataSourceInspection */
         return 'insert into ' . $entityModel->tableName . '(' . $fields . ')values(' . $values . ')';
     }
 
@@ -1229,6 +1234,7 @@ class EntityParser {
             assert($prop instanceof EntityProperty);
             $where .= $prop->fieldName . '=:' . $primaryKey;
         }
+        /** @noinspection SqlNoDataSourceInspection */
         return 'delete from ' . $entityModel->tableName . ' where ' . $where;
     }
 }
