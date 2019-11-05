@@ -65,7 +65,11 @@ class Parameters extends ActionArgs {
                 die(); // Не обрабатываем,
                 break; // но и не ошибка
             default:
-                Logger::fatalError('Invalid HTTP Method, ' . $this->_methodName . '.');
+                if (defined('STDIN')) {
+                    $this->_methodName = ActionArgs::COMMAND_LINE_METHOD_NAME;
+                } else {
+                    Logger::fatalError('Invalid HTTP Method, ' . $this->_methodName . '.');
+                }
                 break;
         }
         $this->postProcessParameters();
