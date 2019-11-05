@@ -17,13 +17,15 @@ use XEAF\API\App\Router;
 /**
  * Содержит аргуметы вызова действия
  *
- * @property string $sessionId      Идентификатор сессии
- * @property string $methodName     Идентификатор метода
- * @property string $actionName     Идентификатор действия
- * @property string $actionMode     Идентификатор режима вызова действия
- * @property string $actionObjectId Идентификатор объекта действия
- * @property string $actionPath     Дополнительный путь действия
- * @property array  $actionArgs     Дополнительные параметры вызова действия
+ * @property string    $sessionId       Идентификатор сессии
+ * @property string    $methodName      Идентификатор метода
+ * @property string    $actionName      Идентификатор действия
+ * @property string    $actionMode      Идентификатор режима вызова действия
+ * @property string    $actionObjectId  Идентификатор объекта действия
+ * @property string    $actionPath      Дополнительный путь действия
+ * @property array     $actionArgs      Дополнительные параметры вызова действия
+ *
+ * @property-read bool $commandLineMode Признак исполнения в режиме командной строки
  *
  * @package  XEAF\API\Core
  */
@@ -38,6 +40,11 @@ abstract class ActionArgs extends DataModel {
      * Идентификатор HTTP метода POST
      */
     public const POST_METHOD_NAME = 'POST';
+
+    /**
+     * Идентификатор метода вызова в режиме комендной строки
+     */
+    public const COMMAND_LINE_METHOD_NAME = 'COMMAND';
 
     /**
      * Идентификатор HTTP метода DELETE
@@ -106,6 +113,15 @@ abstract class ActionArgs extends DataModel {
      * @var string
      */
     protected $_actualURL = '';
+
+    /**
+     * Возвращает признак исполнения в режиме командной строки
+     *
+     * @return bool
+     */
+    public function getCommandLineMode(): bool {
+        return defined('STDIN');
+    }
 
     /**
      * Возвращает идентификатор сессии

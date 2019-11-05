@@ -187,7 +187,7 @@ class RedisProvider extends StdObject {
      */
     public function delete(string $key): void {
         try {
-            $this->_redis->delete($key);
+            $this->_redis->del($key);
         } catch (Throwable $reason) {
             throw RedisException::dataSavingError($this->_name, $reason);
         }
