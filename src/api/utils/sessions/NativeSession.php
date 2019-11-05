@@ -48,11 +48,13 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function loadSessionData(): void {
-        $this->internalSessionStart();
-        foreach ($_SESSION as $key => $value) {
-            $this->put($key, $value);
+        if ($this->internalAllowSession()) {
+            $this->internalSessionStart();
+            foreach ($_SESSION as $key => $value) {
+                $this->put($key, $value);
+            }
+            $this->internalSessionWriteClose();
         }
-        $this->internalSessionWriteClose();
     }
 
     /**
@@ -61,13 +63,15 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function saveSessionData(): void {
-        $this->internalSessionStart();
-        $data = $this->storedValues();
-        foreach ($data as $key => $value) {
-            $_SESSION[$key] = $value;
+        if ($this->internalAllowSession()) {
+            $this->internalSessionStart();
+            $data = $this->storedValues();
+            foreach ($data as $key => $value) {
+                $_SESSION[$key] = $value;
+            }
+            $_SESSION[Parameters::SESSION_ID_NAME] = $this->getSessionId();
+            $this->internalSessionWriteClose();
         }
-        $_SESSION[Parameters::SESSION_ID_NAME] = $this->getSessionId();
-        $this->internalSessionWriteClose();
     }
 
     /**
@@ -76,15 +80,26 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function deleteSessionData(): void {
-        $this->internalSessionStart();
-        $data = $this->storedValues();
-        foreach ($data as $key => $value) {
-            if ($key != Parameters::SESSION_ID_NAME) {
-                unset($_SESSION[$key]);
+        if ($this->internalAllowSession()) {
+            $this->internalSessionStart();
+            $data = $this->storedValues();
+            foreach ($data as $key => $value) {
+                if ($key != Parameters::SESSION_ID_NAME) {
+                    unset($_SESSION[$key]);
+                }
             }
+            $this->internalSessionWriteClose();
         }
-        $this->internalSessionWriteClose();
         parent::deleteSessionData();
+    }
+
+    /**
+     * Возвращает признак разрешения работы с сессией
+     *
+     * @return bool
+     */
+    private function internalAllowSession(): bool {
+        return !defined('STDIN');
     }
 
     /**
@@ -93,7 +108,7 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     private function internalSessionStart(): void {
-        if (!defined('STDIN')) {
+        if ($this->internalAllowSession()) {
             session_start();
         }
     }
@@ -104,7 +119,7 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     private function internalSessionWriteClose(): void {
-        if (!defined('STDIN')) {
+        if ($this->internalAllowSession()) {
             session_write_close();
         }
     }
