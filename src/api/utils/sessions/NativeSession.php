@@ -48,11 +48,11 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function loadSessionData(): void {
-        session_start();
+        $this->internalSessionStart();
         foreach ($_SESSION as $key => $value) {
             $this->put($key, $value);
         }
-        session_write_close();
+        $this->internalSessionWriteClose();
     }
 
     /**
@@ -61,13 +61,13 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function saveSessionData(): void {
-        session_start();
+        $this->internalSessionStart();
         $data = $this->storedValues();
         foreach ($data as $key => $value) {
             $_SESSION[$key] = $value;
         }
         $_SESSION[Parameters::SESSION_ID_NAME] = $this->getSessionId();
-        session_write_close();
+        $this->internalSessionWriteClose();
     }
 
     /**
@@ -76,14 +76,36 @@ class NativeSession extends SessionProvider {
      * @return void
      */
     public function deleteSessionData(): void {
-        session_start();
+        $this->internalSessionStart();
         $data = $this->storedValues();
         foreach ($data as $key => $value) {
             if ($key != Parameters::SESSION_ID_NAME) {
                 unset($_SESSION[$key]);
             }
         }
-        session_write_close();
+        $this->internalSessionWriteClose();
         parent::deleteSessionData();
+    }
+
+    /**
+     * Вунтренняя функция запуска механизма сессии
+     *
+     * @return void
+     */
+    private function internalSessionStart(): void {
+        if (!defined('STDIN')) {
+            session_start();
+        }
+    }
+
+    /**
+     * Вунтренняя функция закрытия сессии
+     *
+     * @return void
+     */
+    private function internalSessionWriteClose(): void {
+        if (!defined('STDIN')) {
+            session_write_close();
+        }
     }
 }
