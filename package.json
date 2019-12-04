@@ -1,0 +1,17 @@
+{
+    "name"        : "xeaf-php",
+    "author"      : {
+        "name" : "Николай В. Анохин",
+        "email": "n.anokhin@xeaf.net"
+    },
+    "version"     : "7.0.9",
+    "private"     : true,
+    "dependencies": {
+        "jquery"                       : "^3.4.1",
+        "bootstrap"                    : "^4.4.1",
+        "datatables.net"               : "^1.10.20",
+        "datatables.net-dt"            : "^1.10.20",
+        "datatables.net-plugins"       : "^1.10.20",
+        "@fortawesome/fontawesome-free": "^5.11.2"
+    }
+}

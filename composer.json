@@ -3,7 +3,7 @@
     "description"      : "Реализация концепции XEAF для PHP",
     "type"             : "library",
     "minimum-stability": "stable",
-    "version"          : "7.0.8",
+    "version"          : "7.0.9",
     "license"          : "Apache-2.0",
     "authors"          : [
         {
@@ -80,22 +80,18 @@
         ]
     },
     "require"          : {
-        "php"                    : ">=7.3",
-        "ext-curl"               : "*",
-        "ext-gd"                 : "*",
-        "ext-json"               : "*",
-        "ext-mbstring"           : "*",
-        "ext-pdo"                : "*",
-        "ext-pdo_sqlite"         : "*",
-        "ext-pdo_mysql"          : "*",
-        "ext-pdo_pgsql"          : "*",
-        "ext-redis"              : "*",
-        "ext-imagick"            : "*",
-        "ext-zip"                : "*",
-        "smarty/smarty"          : "3.1.*",
-        "components/jquery"      : "3.3.*",
-        "components/font-awesome": "5.9.*",
-        "twbs/bootstrap"         : "4.3.*",
-        "datatables/datatables"  : "1.10.*"
+        "php"           : ">=7.3",
+        "ext-curl"      : "*",
+        "ext-gd"        : "*",
+        "ext-json"      : "*",
+        "ext-mbstring"  : "*",
+        "ext-pdo"       : "*",
+        "ext-pdo_sqlite": "*",
+        "ext-pdo_mysql" : "*",
+        "ext-pdo_pgsql" : "*",
+        "ext-redis"     : "*",
+        "ext-imagick"   : "*",
+        "ext-zip"       : "*",
+        "smarty/smarty" : "3.1.*"
     }
 }
