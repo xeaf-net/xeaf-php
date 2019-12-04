@@ -252,9 +252,9 @@ XEAFApp.prototype.dataTableLanguage = function () {
  */
 XEAFApp.prototype.dataTableInit = function (api) {
     let input        = $('.dataTables_filter input').off();
-    let searchText   = 'Поиск';
-    let searchButton = $('<button style="margin-top: -6px;" class="btn btn-sm btn-primary ml-1">')
-        .text(searchText).on('click', function () {
+    let searchText   = '<i class="fa fa-search"></i>';
+    let searchButton = $('<button class="btn btn-sm btn-primary btn-datatables-search ml-1">')
+        .html(searchText).on('click', function () {
             api.search('' + input.val()).draw();
         });
     input.on('keypress', function (e) {

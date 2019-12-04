@@ -2,6 +2,7 @@
   <dictionary name="n.anokhin">
     <words>
       <w>algo</w>
+      <w>datatables</w>
       <w>mbstring</w>
       <w>pgsql</w>
     </words>
