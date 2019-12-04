@@ -185,8 +185,7 @@ class RedisStorage extends Storage {
     protected function loadConfig(string $name): RedisConfig {
         $config = Factory::getConfiguration();
         $data   = $config->getNamedSection(self::CONFIG_SECTION, $name);
-        $result = new RedisConfig($data);
-        return $result;
+        return new RedisConfig($data);
     }
 
     /**

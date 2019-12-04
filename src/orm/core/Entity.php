@@ -190,7 +190,7 @@ abstract class Entity extends DataObject {
         foreach ($this->_entityModel->entityProperties as $name => $property) {
             assert($property instanceof EntityProperty);
             $result[$name] = $property->formatValue($this->$name);
-        };
+        }
         return $result;
     }
 
