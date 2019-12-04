@@ -106,7 +106,8 @@ XEAFApp.prototype.loadModalForm = function (url, formId, successCallback, errorC
             if (errorCallback !== undefined) {
                 errorCallback(error);
             }
-            xeafApp.processAjaxError(error)
+            // xeafApp.processAjaxError(error)
+            self.processAjaxError(error)
         }
     });
 };
@@ -243,7 +244,8 @@ XEAFApp.prototype.restoreFormElements = function (elements) {
  * Возвращает ссылку на языковой ресурс компоненты DataTable
  */
 XEAFApp.prototype.dataTableLanguage = function () {
-    return this.portalURL + '/public/datatables.lang';
+//    return this.portalURL + '/public/datatables.lang';
+    return this.portalURL + '/node_modules/datatables.net-plugins/i18n/Russian.lang';
 };
 
 /**
