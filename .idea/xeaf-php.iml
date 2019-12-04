@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/db.mysql/utils/providers" isTestSource="false" packagePrefix="XEAF\DB\MySQL\Utils\Providers\" />
       <sourceFolder url="file://$MODULE_DIR$/src/db/utils" isTestSource="false" packagePrefix="XEAF\DB\Utils\" />
       <sourceFolder url="file://$MODULE_DIR$/src/ui" isTestSource="false" packagePrefix="XEAF\UI\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/models/config" isTestSource="false" packagePrefix="XEAF\API\Models\Config\" />
       <sourceFolder url="file://$MODULE_DIR$/src/api/utils" isTestSource="false" packagePrefix="XEAF\API\Utils\" />
       <sourceFolder url="file://$MODULE_DIR$/src/redis" isTestSource="false" packagePrefix="XEAF\Redis\" />
@@ -44,6 +45,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/api/utils/sessions" isTestSource="false" packagePrefix="XEAF\API\Utils\Sessions\" />
       <sourceFolder url="file://$MODULE_DIR$/src/smarty/models/config" isTestSource="false" packagePrefix="XEAF\Smarty\Models\Config\" />
       <sourceFolder url="file://$MODULE_DIR$/src/ui/utils" isTestSource="false" packagePrefix="XEAF\UI\Utils\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/db" isTestSource="false" packagePrefix="XEAF\DB\" />
       <sourceFolder url="file://$MODULE_DIR$/src/orm" isTestSource="false" packagePrefix="XEAF\ORM\" />
       <sourceFolder url="file://$MODULE_DIR$/src/ui/modules" isTestSource="false" packagePrefix="XEAF\UI\Modules\" />
