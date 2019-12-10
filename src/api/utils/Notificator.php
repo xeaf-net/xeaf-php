@@ -74,7 +74,7 @@ class Notificator extends RestApiProvider {
      * URL сервера
      * @var string
      */
-    protected $_serverURL = "http://localhost:8181";
+    protected $_serverURL = NotificatorConfig::DEFAULT_URL;
 
     /**
      * Ключ доступа к серверу
@@ -86,7 +86,7 @@ class Notificator extends RestApiProvider {
      * Признак разрешения отправки сообщений
      * @var bool
      */
-    protected $_enable = false;
+    protected $_enabled = false;
 
     /**
      * Ссылка на единичных экземпляр объекта класса
@@ -102,7 +102,7 @@ class Notificator extends RestApiProvider {
         $config           = $this->loadConfiguration();
         $this->_serverURL = $config->url;
         $this->_serverKey = $config->key;
-        $this->_enable    = $config->enable;
+        $this->_enabled   = $config->enabled;
     }
 
     /**
@@ -112,7 +112,7 @@ class Notificator extends RestApiProvider {
      * @throws \XEAF\API\Utils\Exceptions\SessionException
      */
     public function canUseService(): bool {
-        return $this->_enable && $this->_serverURL != null && $this->_serverKey != null && Session::authorized();
+        return $this->_enabled && $this->_serverURL != null && $this->_serverKey != null && Session::authorized();
     }
 
     /**

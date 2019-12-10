@@ -18,19 +18,24 @@ use XEAF\API\Utils\Crypto;
 /**
  * Параметры конфигурации отправки нотификационных сообщений
  *
- * @property-read string $url    URL сервера доставки сообщений
- * @property-read string $key    Ключ отправителя
- * @property-read bool   $enable Признак разрешения отправки сообщений
+ * @property-read string $url     URL сервера доставки сообщений
+ * @property-read string $key     Ключ отправителя
+ * @property-read bool   $enabled Признак разрешения отправки сообщений
  *
  * @package  XEAF\API\Models\Config
  */
 class NotificatorConfig extends DataModel {
 
     /**
+     * URL сервера по умолчанию
+     */
+    public const DEFAULT_URL = 'http://localhost:8181';
+
+    /**
      * URL сервера
      * @var string
      */
-    private $_url = 'http://localhost:8181';
+    private $_url = self::DEFAULT_URL;
 
     /**
      * Ключ подключения к серверу
