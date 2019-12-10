@@ -12,6 +12,7 @@
         "datatables.net"               : "^1.10.20",
         "datatables.net-dt"            : "^1.10.20",
         "datatables.net-plugins"       : "^1.10.20",
-        "@fortawesome/fontawesome-free": "^5.11.2"
+        "@fortawesome/fontawesome-free": "^5.11.2",
+        "socket.io-client"             : "^2.3.0"
     }
 }

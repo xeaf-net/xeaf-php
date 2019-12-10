@@ -1,5 +1,5 @@
 {
-    "portal": {
+    "portal"     : {
         "url"     : "http://localhost",
         "origin"  : "*",
         "language": "en_US",
@@ -7,15 +7,20 @@
         "tmp"     : "/tmp",
         "session" : "files://default"
     },
-    "files" : {
+    "files"      : {
         "default": {
             "path": "/tmp"
         }
     },
-    "logger": {
+    "logger"     : {
         "level" : "debug",
         "prefix": "xeaf",
         "path"  : "/var/logs"
+    },
+    "notificator": {
+        "url"   : "https://xns.xeaf.net",
+        "key"   : "00000000-0000-0000-0000-000000000000",
+        "enable": false
     }
 }
 
