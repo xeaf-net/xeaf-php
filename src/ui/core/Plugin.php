@@ -46,7 +46,7 @@ class Plugin extends LayoutExtension {
      *
      * @return \XEAF\API\Core\DataObject|null
      */
-    public function getDataObject(/** @noinspection PhpUnusedParameterInspection */ array $params = []): ?DataObject {
+    public function getDataObject(array $params = []): ?DataObject {
         return null;
     }
 }

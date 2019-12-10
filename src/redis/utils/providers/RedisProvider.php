@@ -59,7 +59,6 @@ class RedisProvider extends StdObject {
     /**
      * Подключение к серверу
      *
-     * @noinspection PhpComposerExtensionStubsInspection
      * @var \Redis
      */
     private $_redis = null;
