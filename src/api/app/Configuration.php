@@ -50,24 +50,6 @@ class Configuration extends DataModel {
     protected $_portal = null;
 
     /**
-     * Параметры подключения к базам данных
-     * @var array
-     */
-    protected $_databases = [];
-
-    /**
-     * Параметры подключения к серверам Redis
-     * @var array
-     */
-    protected $_redis = [];
-
-    /**
-     * Параметры журнала операций
-     * @var \XEAF\API\Models\Config\LoggerConfig
-     */
-    protected $_logger = null;
-
-    /**
      * Конструктор класса
      *
      * @throws \XEAF\API\Utils\Exceptions\ConfigurationException

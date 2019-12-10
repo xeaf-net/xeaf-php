@@ -64,10 +64,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/codeception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/phpunit-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/stub" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/components/font-awesome" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/datatables/datatables" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/facebook/webdriver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
@@ -125,7 +122,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/theseer/tokenizer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
