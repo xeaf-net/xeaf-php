@@ -24,6 +24,11 @@ use XEAF\API\Utils\Exceptions\SerializerException;
 class Serializer {
 
     /**
+     * Представление пустого объекта JSON
+     */
+    public const EMPTY_JSON = '{}';
+
+    /**
      * Максимальная глубина просмотра массивов и объектов
      */
     private const DEPTH = 512;
@@ -73,13 +78,16 @@ class Serializer {
     /**
      * Возвращает JSON представление объекта данных
      *
-     * @param \XEAF\API\Core\DataObject $dataObject Объект данных
+     * @param \XEAF\API\Core\DataObject|null $dataObject Объект данных
      *
      * @return string
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
      */
-    public static function jsonDataObjectEncode(DataObject $dataObject): string {
+    public static function jsonDataObjectEncode(DataObject $dataObject = null): string {
         try {
+            if ($dataObject == null) {
+                return self::EMPTY_JSON;
+            }
             return json_encode($dataObject->getPropertyValues(), JSON_THROW_ON_ERROR);
         } catch (Throwable $reason) {
             throw SerializerException::serializationError($reason);

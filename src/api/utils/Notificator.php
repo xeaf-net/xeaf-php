@@ -118,9 +118,9 @@ class Notificator extends RestApiProvider {
     /**
      * Отправляет нотификационное сообщение
      *
-     * @param string                    $userId     Идентификатор пользователя
-     * @param string                    $type       Тип сообщения
-     * @param \XEAF\API\Core\DataObject $dataObject Объект данных сообщения
+     * @param string                         $userId     Идентификатор пользователя
+     * @param string                         $type       Тип сообщения
+     * @param \XEAF\API\Core\DataObject|null $dataObject Объект данных сообщения
      *
      * @return void
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
@@ -128,6 +128,22 @@ class Notificator extends RestApiProvider {
      */
     public function notify(string $userId, string $type, DataObject $dataObject = null): void {
         self::notifyGroup([$userId], $type, $dataObject);
+    }
+
+    /**
+     * Отправляет сообщение пользователю сессии
+     *
+     * @param string                         $type       Тип сообщеия
+     * @param \XEAF\API\Core\DataObject|null $dataObject Объект данных
+     *
+     * @return void
+     * @throws \XEAF\API\Utils\Exceptions\SessionException
+     * @throws \XEAF\API\Utils\Exceptions\SerializerException
+     */
+    public function notifyMe(string $type, DataObject $dataObject = null): void {
+        if (Session::authorized()) {
+            $this->notify(Session::getUserId(), $type, $dataObject);
+        }
     }
 
     /**
