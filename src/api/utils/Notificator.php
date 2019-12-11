@@ -147,6 +147,22 @@ class Notificator extends RestApiProvider {
     }
 
     /**
+     * Отправляет сообщение всем пользователям
+     *
+     * @param string                         $type       Тип сообщения
+     * @param \XEAF\API\Core\DataObject|null $dataObject Объект данных
+     *
+     * @return void
+     * @throws \XEAF\API\Utils\Exceptions\SessionException
+     * @throws \XEAF\API\Utils\Exceptions\SerializerException
+     */
+    public function notifyAll(string $type, DataObject $dataObject = null): void {
+        if (Session::authorized()) {
+            $this->notify($this->_serverKey, $type, $dataObject);
+        }
+    }
+
+    /**
      * Отправляет нотификационное сообщение группе пользователей
      *
      * @param array                     $users      Список идентификаторов пользователей
