@@ -166,9 +166,31 @@ abstract class Module extends Extension {
      */
     protected function redirectIfNotAuthorized(string $url = null): ?ActionResult {
         if (!Session::authorized()) {
-            $redirectTo = $url ? $url : $this->cfg->portal->url . '/' . Router::LOGIN_MODULE;
-            return new RedirectResult($redirectTo);
+            if ($url) {
+                return new RedirectResult($url);
+            }
+            return $this->redirectToLogin();
         }
         return null;
+    }
+
+    /**
+     * Возвращает перенаправление на домашнюю страницу
+     *
+     * @return \XEAF\API\Core\ActionResult
+     */
+    protected function redirectToHome(): ActionResult {
+        $url = $this->cfg->portal->url;
+        return new RedirectResult($url);
+    }
+
+    /**
+     * Возвращает перенаправление на страницу логина
+     *
+     * @return \XEAF\API\Core\ActionResult
+     */
+    protected function redirectToLogin(): ActionResult {
+        $url = $this->cfg->portal->url . '/' . Router::LOGIN_MODULE;
+        return new RedirectResult($url);
     }
 }
