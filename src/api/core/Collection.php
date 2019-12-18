@@ -91,6 +91,18 @@ abstract class Collection implements Iterator {
     }
 
     /**
+     * Изменяет порядок сортировки объектов
+     *
+     * @param callable $compare Функция сравнения объекто коллекции
+     *
+     * @return void
+     */
+    public function reorder(callable $compare): void {
+        usort($this->_data, $compare);
+        $this->rewind();
+    }
+
+    /**
      * Извлекает объект из коллекции
      *
      * @return mixed
