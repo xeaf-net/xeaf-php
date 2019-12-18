@@ -109,10 +109,9 @@ class Notificator extends RestApiProvider {
      * Возвращает признак возможности использования сервиса
      *
      * @return bool
-     * @throws \XEAF\API\Utils\Exceptions\SessionException
      */
     public function canUseService(): bool {
-        return $this->_enabled && $this->_serverURL != null && $this->_serverKey != null && Session::authorized();
+        return $this->_enabled && $this->_serverURL != null && $this->_serverKey != null;
     }
 
     /**
@@ -124,7 +123,6 @@ class Notificator extends RestApiProvider {
      *
      * @return void
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
-     * @throws \XEAF\API\Utils\Exceptions\SessionException
      */
     public function notify(string $userId, string $type, DataObject $dataObject = null): void {
         self::notifyGroup([$userId], $type, $dataObject);
@@ -141,9 +139,7 @@ class Notificator extends RestApiProvider {
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
      */
     public function notifyMe(string $type, DataObject $dataObject = null): void {
-        if (Session::authorized()) {
-            $this->notify(Session::getUserId(), $type, $dataObject);
-        }
+        $this->notify(Session::getUserId(), $type, $dataObject);
     }
 
     /**
@@ -153,13 +149,10 @@ class Notificator extends RestApiProvider {
      * @param \XEAF\API\Core\DataObject|null $dataObject Объект данных
      *
      * @return void
-     * @throws \XEAF\API\Utils\Exceptions\SessionException
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
      */
     public function notifyAll(string $type, DataObject $dataObject = null): void {
-        if (Session::authorized()) {
-            $this->notify($this->_serverKey, $type, $dataObject);
-        }
+        $this->notify($this->_serverKey, $type, $dataObject);
     }
 
     /**
@@ -171,7 +164,6 @@ class Notificator extends RestApiProvider {
      *
      * @return void
      * @throws \XEAF\API\Utils\Exceptions\SerializerException
-     * @throws \XEAF\API\Utils\Exceptions\SessionException
      */
     public function notifyGroup(array $users, string $type, DataObject $dataObject = null): void {
         if ($this->canUseService()) {
