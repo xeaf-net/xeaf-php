@@ -65,17 +65,20 @@ XEAFApp.prototype.showToast = function (alert, title, message) {
 XEAFApp.prototype.prepareForm = function (formId, successCallback, errorCallback) {
     let self   = this;
     let fullId = '#' + formId;
-    $(document).off('submit', fullId);
-    $(document).on('submit', fullId, function (e) {
-        e.preventDefault();
-        self.processAjaxPost(formId, successCallback, errorCallback);
-        return false;
-    });
-    $(fullId).off('change', '.form-control');
-    $(fullId).on('change', '.form-control', function () {
-        let el = $(this);
-        el.removeClass('is-invalid');
-    });
+    let formEl = $(fullId);
+    if (formEl.length === 1) {
+        $(document).off('submit', fullId);
+        $(document).on('submit', fullId, function (e) {
+            e.preventDefault();
+            self.processAjaxPost(formId, successCallback, errorCallback);
+            return false;
+        });
+        formEl.off('change', '.form-control');
+        formEl.on('change', '.form-control', function () {
+            let el = $(this);
+            el.removeClass('is-invalid');
+        });
+    }
 };
 
 /**
