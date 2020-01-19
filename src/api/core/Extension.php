@@ -85,11 +85,12 @@ abstract class Extension extends StdObject {
     /**
      * Возвращает значение языковой переменной
      *
-     * @param string $name
+     * @param string $name Идентификатор переменной
+     * @param array  $args Аргументы
      *
      * @return string
      */
-    protected function lang(string $name): string {
-        return Language::getLanguageVar($name);
+    protected function lang(string $name, array $args = []): string {
+        return Language::getLanguageVar($name, $args);
     }
 }
