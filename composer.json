@@ -3,7 +3,7 @@
     "description"      : "Реализация концепции XEAF для PHP",
     "type"             : "library",
     "minimum-stability": "stable",
-    "version"          : "7.0.18",
+    "version"          : "7.0.19",
     "license"          : "Apache-2.0",
     "authors"          : [
         {

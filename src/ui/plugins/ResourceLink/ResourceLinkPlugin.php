@@ -16,6 +16,7 @@ use XEAF\API\Core\DataObject;
 use XEAF\API\Utils\FileSystem;
 use XEAF\API\Utils\Parameters;
 use XEAF\API\Utils\Reflection;
+use XEAF\API\Utils\Strings;
 use XEAF\UI\App\Router;
 use XEAF\UI\Core\Plugin;
 
@@ -87,7 +88,7 @@ class ResourceLinkPlugin extends Plugin {
         if ($layoutFile) {
             $actionName = $this->prm->actionName;
             $actionMode = $this->prm->actionMode;
-            if ($actionMode != Parameters::DEFAULT_ACTION_MODE) {
+            if ($actionMode != Parameters::DEFAULT_ACTION_MODE && !Strings::isEmpty($actionMode)) {
                 $fileName = FileSystem::changeFileNameExt($layoutFile, $type);
                 if (FileSystem::fileExists($fileName)) {
                     $this->_data[] = $this->cfg->portal->url . '/module/' . $actionName . '.' . $actionMode . '.' . $type;

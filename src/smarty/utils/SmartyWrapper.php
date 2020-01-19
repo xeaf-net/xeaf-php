@@ -45,6 +45,16 @@ class SmartyWrapper {
     protected const ACTUAL_URL = 'actualURL';
 
     /**
+     * Идентификатор переменной действия
+     */
+    protected const ACTION_NAME = 'actionName';
+
+    /**
+     * Идентификатор переменной режима действия
+     */
+    protected const ACTION_MODE = 'actionMode';
+
+    /**
      * Идентификатор модели данных
      */
     protected const DATA_MODEL = 'dataModel';
@@ -112,9 +122,12 @@ class SmartyWrapper {
             $smarty->registerPlugin("modifier", "dt", self::class . "::printDateTimeModifier");
 
             // -- Переменные ----
+            $prm = Factory::getParameters();
             $url = Factory::getConfiguration()->portal->url;
             $smarty->assign(self::PORTAL_URL, $url);
             $smarty->assign(self::ACTUAL_URL, $url . $_SERVER['REQUEST_URI']);
+            $smarty->assign(self::ACTION_NAME, $prm->actionName);
+            $smarty->assign(self::ACTION_MODE, $prm->actionMode);
             $smarty->assign(self::DEBUG_MODE, __XEAF_DEBUG_MODE__);
         } catch (Throwable $reason) {
             throw TemplateException::errorInitializingDefaultPlugins($reason);
