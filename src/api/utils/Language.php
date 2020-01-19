@@ -152,11 +152,15 @@ class Language {
      * Возвращает значение языковой переменной
      *
      * @param string $name Идентификатор
+     * @param array  $args Аргументы
      *
      * @return string
      */
-    public static function getLanguageVar(string $name): string {
-        return self::$_languageVars[$name] ?? $name;
+    public static function getLanguageVar(string $name, array $args = []): string {
+        if (isset(self::$_languageVars[$name])) {
+            return vsprintf(self::$_languageVars[$name], $args);
+        }
+        return $name;
     }
 
     /**
