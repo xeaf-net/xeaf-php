@@ -88,11 +88,12 @@ class ResourceLinkPlugin extends Plugin {
         if ($layoutFile) {
             $actionName = $this->prm->actionName;
             $actionMode = $this->prm->actionMode;
-            if ($actionMode != Parameters::DEFAULT_ACTION_MODE && !Strings::isEmpty($actionMode)) {
-                $fileName = FileSystem::changeFileNameExt($layoutFile, $type);
-                if (FileSystem::fileExists($fileName)) {
-                    $this->_data[] = $this->cfg->portal->url . '/module/' . $actionName . '.' . $actionMode . '.' . $type;
-                }
+            if (Strings::isEmpty($actionMode)) {
+                $actionMode = Parameters::DEFAULT_ACTION_MODE;
+            }
+            $fileName = FileSystem::removeFileNameExt($layoutFile) . '-' . ucfirst($actionMode) . '.' . $type;
+            if (FileSystem::fileExists($fileName)) {
+                $this->_data[] = $this->cfg->portal->url . '/module/' . $actionName . '.' . $actionMode . '.' . $type;
             }
         }
     }
