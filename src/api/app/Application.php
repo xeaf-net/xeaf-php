@@ -266,7 +266,12 @@ class Application extends StdObject {
             header('Content-Type: ' . $result->mimeType);
         }
         if ($result->attachment) {
-            header('Content-Disposition: attachment;filename=' . $result->fileName);
+            if (strpos($_SERVER ['HTTP_USER_AGENT'], "MSIE") !== false) {
+                header('Content-Disposition: attachment; filename="' . rawurlencode($result->fileName) . '"');
+            } else {
+                header('Content-Disposition: attachment; filename*=UTF-8\'\'' . rawurlencode($result->fileName));
+            }
+            // header('Content-Disposition: attachment;filename=' . $result->fileName);
         } else {
             $cacheSecs = DateTime::SECONDS_PER_HOUR;
             $cacheTime = DateTime::dateTimeToCache(time() + $cacheSecs);
