@@ -23,7 +23,7 @@ use XEAF\API\Utils\MimeTypes;
  * @property      bool   $attachment Признак отправки файла как вложения
  * @property      bool   $delete     Признак уаделния после отправки
  * @property      string $mimeType   Тип MIME
- * @property-read string $fileName   Имя файла
+ * @property      string $fileName   Имя файла
  * @property-read string $fileType   Тип файла
  *
  * @package  XEAF\API\Models\Results
@@ -161,12 +161,23 @@ class FileResult extends ActionResult {
     }
 
     /**
-     * Возвращает имя файла
+     * Возвращает отображаемое имя файла
      *
      * @return string
      */
     public function getFileName(): string {
         return $this->_fileName;
+    }
+
+    /**
+     * Задает отображаемое имя файла
+     *
+     * @param string $fileName Имя файла
+     *
+     * @return void
+     */
+    public function setFileName(string $fileName): void {
+        $this->_fileName = $fileName;
     }
 
     /**
