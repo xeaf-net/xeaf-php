@@ -6,6 +6,7 @@
       <w>dbindex</w>
       <w>mbstring</w>
       <w>pgsql</w>
+      <w>readfile</w>
     </words>
   </dictionary>
 </component>
