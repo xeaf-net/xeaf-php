@@ -25,6 +25,7 @@ use XEAF\API\Models\Results\RedirectResult;
 use XEAF\API\Models\Results\TableResult;
 use XEAF\API\Modules\HomeModule;
 use XEAF\API\Utils\DateTime;
+use XEAF\API\Utils\FileSystem;
 use XEAF\API\Utils\HttpStatusCodes;
 use XEAF\API\Utils\Language;
 use XEAF\API\Utils\Logger;
@@ -271,7 +272,6 @@ class Application extends StdObject {
             } else {
                 header('Content-Disposition: attachment; filename*=UTF-8\'\'' . rawurlencode($result->fileName));
             }
-            // header('Content-Disposition: attachment;filename=' . $result->fileName);
         } else {
             $cacheSecs = DateTime::SECONDS_PER_HOUR;
             $cacheTime = DateTime::dateTimeToCache(time() + $cacheSecs);
@@ -279,7 +279,7 @@ class Application extends StdObject {
             header("Pragma: cache");
             header("Cache-Control: max-age=$cacheSecs");
         }
-        readfile($result->filePath);
+        FileSystem::readFileChunks($result->filePath);
         if ($result->delete && file_exists($result->filePath)) {
             unlink($result->filePath);
         }
