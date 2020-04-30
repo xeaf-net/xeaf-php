@@ -7,7 +7,7 @@
     "version"     : "7.0.14",
     "private"     : true,
     "dependencies": {
-        "jquery"                       : "^3.4.1",
+        "jquery"                       : "^3.5.0",
         "bootstrap"                    : "^4.4.1",
         "datatables.net"               : "^1.10.20",
         "datatables.net-dt"            : "^1.10.20",
